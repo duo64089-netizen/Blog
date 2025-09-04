@@ -1,8 +1,16 @@
 /* General */
 body {
-  font-family: 'Segoe UI', sans-serif;
+  font-family: 'Poppins', sans-serif;
   background: #f4f6f9;
   padding-top: 70px; /* navbar fixed offset */
+}
+
+/* Navbar */
+.navbar {
+  background: linear-gradient(90deg, #6a11cb 0%, #2575fc 100%);
+}
+.navbar .nav-link:hover {
+  text-decoration: underline;
 }
 
 /* Hero */
@@ -27,15 +35,28 @@ body {
 }
 
 /* Blog cards */
+.blog-card {
+  border: none;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.hover-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
 .blog-card img {
   height: 200px;
   object-fit: cover;
 }
-.blog-card .card-body {
-  padding: 1rem;
+.btn-gradient {
+  background: linear-gradient(90deg, #2575fc, #6a11cb);
+  border: none;
+  color: #fff;
+  transition: 0.3s;
 }
-.blog-card h5 {
-  font-weight: bold;
+.btn-gradient:hover {
+  opacity: 0.85;
 }
 
 /* Sidebar */
@@ -45,7 +66,7 @@ body {
 }
 .sidebar-box h5 {
   margin-bottom: 1rem;
-  font-weight: bold;
+  font-weight: 600;
 }
 
 /* Footer */
@@ -55,4 +76,66 @@ footer {
   padding: 1rem;
   text-align: center;
   margin-top: 2rem;
+}
+
+/* Chatbot Widget */
+#chat-widget {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 350px;
+  max-height: 500px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+  display: none;
+  flex-direction: column;
+  overflow: hidden;
+  z-index: 1000;
+}
+#chat-header {
+  background: linear-gradient(90deg, #2575fc, #6a11cb);
+  color: #fff;
+  padding: 10px;
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#chat-messages {
+  flex: 1;
+  padding: 10px;
+  overflow-y: auto;
+  font-size: 14px;
+}
+#chat-input {
+  display: flex;
+  border-top: 1px solid #ddd;
+}
+#chat-input input {
+  flex: 1;
+  border: none;
+  padding: 10px;
+  outline: none;
+}
+#chat-input button {
+  background: #2575fc;
+  border: none;
+  color: white;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+#chat-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: linear-gradient(90deg, #2575fc, #6a11cb);
+  color: #fff;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 999;
 }
