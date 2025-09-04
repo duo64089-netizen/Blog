@@ -1,9 +1,9 @@
-// Simple search filter
-document.getElementById("search").addEventListener("keyup", function() {
-  let filter = this.value.toLowerCase();
-  let blogs = document.querySelectorAll(".blog-card");
-  blogs.forEach(blog => {
-    let text = blog.innerText.toLowerCase();
-    blog.style.display = text.includes(filter) ? "block" : "none";
-  });
+// Future enhancements
+// Example: dark mode toggle, animations, or AI API calls
+
+console.log("Blog site loaded successfully!");
+
+// Example chatbot trigger (optional custom logic)
+document.addEventListener("DOMContentLoaded", () => {
+  console.log("AI Assistant ready (Chatbase widget will load automatically).");
 });
