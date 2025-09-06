@@ -1,0 +1,27 @@
+---
+layout: layouts/base.njk
+title: "Home"
+---
+<section class="hero">
+  <img class="hero-img" src="https://images.unsplash.com/photo-1526378722010-8a2d939c0d3d?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="hero">
+  <div class="hero-text">
+    <h1>Fresh stories, neutral design.</h1>
+    <p>Professional, readable blog — mobile & desktop friendly.</p>
+  </div>
+</section>
+
+<section class="posts-grid">
+  {% for post in collections.posts | reverse %}
+  <article class="post-card">
+    {% if post.data.image %}
+      <img src="{{ post.data.image }}" alt="{{ post.data.title }}">
+    {% endif %}
+    <div class="post-body">
+      <h2><a href="{{ post.url }}">{{ post.data.title }}</a></h2>
+      <p class="meta">{{ post.date | date: "%b %d, %Y" }} • {{ post.data.category }}</p>
+      <p>{{ post.data.description }}</p>
+      <a class="read-btn" href="{{ post.url }}">Read more</a>
+    </div>
+  </article>
+  {% endfor %}
+</section>
