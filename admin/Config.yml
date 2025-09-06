@@ -1,19 +1,21 @@
 backend:
-  name: github
-  repo: YOUR-USERNAME/my-modern-blog  # 👈 apna repo naam daalna
+  name: git-gateway
   branch: main
 
-media_folder: "assets/images"   # uploaded images save
-public_folder: "/assets/images" # frontend se accessible
+media_folder: "src/assets/images"
+public_folder: "/assets/images"
 
 collections:
-  - name: "blog"
-    label: "Blog"
-    folder: "_posts"
+  - name: "posts"
+    label: "Posts"
+    folder: "src/posts"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    format: "md"
     fields:
       - { name: "title", label: "Title", widget: "string" }
       - { name: "date", label: "Date", widget: "datetime" }
-      - { name: "image", label: "Image", widget: "image" }
+      - { name: "image", label: "Image", widget: "image", required: false }
+      - { name: "category", label: "Category", widget: "string", required: false }
+      - { name: "description", label: "Description", widget: "string", required: false }
       - { name: "body", label: "Body", widget: "markdown" }
