@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{{ title or "My Modern Blog" }}</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="/">My Modern Blog</a>
+      <nav class="main-nav">
+        <a href="/">Home</a>
+        <a href="/about/">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    {{ content | safe }}
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">© 2025 My Modern Blog • Built with Eleventy & Gemini</div>
+  </footer>
+
+  <script src="/assets/js/chat-client.js"></script>
+</body>
+</html>
